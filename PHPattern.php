@@ -101,6 +101,8 @@ switch($argv[1]){
 	break;
 
 	case "find":
+		if(!isset($argv[2]))
+			die(cyan("Usage: ".$argv[0]." [fuzz/find] [length/offset]"));
 		if(!isset($argv[3]))
 			$offset = find_offset($argv[2], 0);
 		else
