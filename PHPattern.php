@@ -50,7 +50,7 @@ function hex2ascii($hex) {
 
 function find_offset($offset, $len=0){
 	if(!preg_match("/^[a-fA-F0-9]{8}$/", $offset)) die(red("[-] Wrong offset format (it must be hexadecimal, len=8!)"));
-	$junk = fuzz($len); //generate the biggest $junk (to avoid asking user for length)
+	$junk = fuzz($len); 
 //	$junk = fuzz(0); //generate the biggest $junk (to avoid asking user for length)
 	$offset_ascii = strrev(hex2ascii($offset)); //reverse to change endianess
 	$pay_length = strpos($junk, $offset_ascii);
